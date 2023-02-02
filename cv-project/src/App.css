@@ -1,16 +1,130 @@
 .App {
-  text-align: center;
+}
+
+.responseContainer {
+  display: flex;
+  justify-content: left;
 }
 
 .yourResponse {
-  display: flex;
-  justify-content: center;
+  display: block;
+  border: 2px solid rgb(0, 5, 7);
+  border-radius: 2px;
+  margin: 3vw;
+  height: 100vh;
+  width: 80%;
 }
 
-.genInfoResponse,
+/* .genInfoResponse,
 .edInfoResponse,
 .expInfoResponse {
   margin: 1vw;
   padding: 1vw;
   border: 2px solid green;
+} */
+
+.genInfoResponse {
+  margin-left: 1vw;
+  margin-right: 1vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
+}
+
+.genInfoContainer {
+  border-bottom: 5px solid blue;
+  display: flex;
+  align-items: center;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+.nameTitle {
+  flex: 2 1 auto;
+}
+
+.genNameResponse {
+  font-size: 7vh;
+  font-weight: bolder;
+  color: darkblue;
+}
+
+.genTitleResponse {
+  font-size: x-large;
+  font-weight: bold;
+  color: rgb(100, 100, 100);
+}
+
+.genContactInfo {
+  margin: 1vw;
+  padding: 1vw;
+}
+
+.genDescription {
+  padding-left: 1vw;
+}
+
+.edInfoResponseContainer {
+  margin-left: 1vw;
+  margin-right: 1vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  font-size: large;
+}
+
+#edHeader {
+  color: darkblue;
+  padding-left: 1vw;
+}
+
+.edInfoResponse {
+  display: flex;
+}
+
+.edAreaOfStudyResponse {
+  margin: 1vw;
+  flex: 2 1 auto;
+  font-weight: 500;
+}
+
+.edSNameResponse {
+  text-decoration: underline;
+  padding-right: 1vw;
+}
+
+.edDateResponse {
+  padding-left: 1vw;
+  font-weight: 600;
+}
+
+.expInfoResponse {
+  margin-left: 1vw;
+  margin-right: 1vw;
+  margin-bottom: 1vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  font-size: large;
+}
+
+#expHeader {
+  color: darkblue;
+  padding-left: 1vw;
+}
+
+.expTitleNameDates {
+  display: flex;
+  margin-left: 1vw;
+}
+
+.expPTitle {
+  flex: 2 1 auto;
+  font-weight: 500;
+}
+
+.expCName {
+  margin-right: 1vw;
+  text-decoration: underline;
+}
+
+.expDescription {
+  margin-left: 1vw;
 }

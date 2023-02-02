@@ -11,24 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-.genInfo {
-  padding-left: 30%;
-  text-align: left;
-  border: 2px solid black;
-}
-
-.educationInfo {
-  padding-left: 30%;
-  text-align: left;
-  border: 2px solid black;
-}
-
-.experienceInfo {
-  padding-left: 30%;
-  text-align: left;
-  border: 2px solid black;
-}
-
-#mTasksInput {
-}

@@ -12,10 +12,26 @@ class App extends Component {
       genInfo: {
         fname: ['First Name'],
         lname: ['Last Name'],
+        title: ['Title'],
+        phone: ['Phone Number'], 
         email: ['Email'],
-        phone: ['Phone Number'],
+        location: ['Location'],
         description: ['Description'],
       }, 
+
+      edInfo: {
+        schoolName : ['School Name'],
+        areaOfStudy : ['Area Of Study'],
+        date : ['Date of Completion']
+      },
+
+      expInfo : {
+        cName : ['Company Name'],
+        pTitle : ['Position Title'],
+        mTasks : ['Job Description'],
+        sDate : ['Start Date'],
+        eDate : ['End Date'],
+      },
 
     }
   }
@@ -26,9 +42,23 @@ class App extends Component {
     this.setState({ genInfo });
   };
 
+  onChangeEd = (e) => {
+    let edInfo = { ...this.state.edInfo };
+    edInfo[e.target.id] = e.target.value;
+    this.setState({ edInfo });
+  };
+
+  onChangeExp = (e) => {
+    let expInfo = { ...this.state.expInfo };
+    expInfo[e.target.id] = e.target.value;
+    this.setState({ expInfo });
+  };
+
   render() {
     const {
       genInfo,
+      edInfo,
+      expInfo,
     } = this.state;
 
     return (
@@ -47,8 +77,16 @@ class App extends Component {
                         <input type='text' title='lname' id='lname' onChange={this.onChange}></input>
                     </div>
                     <div>
+                            <label htmlFor='title'>Title: </label>
+                        <input type='text' title='title' id='title' onChange={this.onChange}></input>
+                    </div>
+                    <div>
                             <label htmlFor="email">Email:</label>
                         <input type='email' title='email'id='email' onChange={this.onChange}></input>
+                    </div>
+                    <div> 
+                            <label htmlFor='location'>Loaction: </label>
+                        <input type='text' title='location' id='location' onChange={this.onChange}></input>
                     </div>
                     <div>
                             <label htmlFor="phoneNum">Phone Number:</label>
@@ -69,15 +107,15 @@ class App extends Component {
                 <form className="educationInfo">
                     <div>
                             <label htmlFor='schoolName'>School Name:</label>
-                        <input type='text' title="schoolName"></input> 
+                        <input type='text' title="schoolName" id='schoolName' onChange={this.onChangeEd}></input> 
                     </div>
                     <div>
                             <label htmlFor='areaOfStudy'>Area Of Study:</label>
-                        <input type='text' title="areaOfStudy"></input> 
+                        <input type='text' title="areaOfStudy" id='areaOfStudy' onChange={this.onChangeEd}></input> 
                     </div>
                     <div>
                             <label htmlFor='date'>Date of Completion:</label>
-                        <input type='date' title="date"></input> 
+                        <input type='date' title="date" id='date' onChange={this.onChangeEd}></input> 
                     </div>
                     <button type="submit">Enter</button>
                 </form>
@@ -90,48 +128,102 @@ class App extends Component {
                 <form className="experienceInfo">
                     <div>
                             <label htmlFor="cName">Company Name:</label>
-                        <input type='text' title="cName"></input> 
+                        <input type='text' title="cName" id='cName' onChange={this.onChangeExp}></input> 
                     </div>
                     <div>
                             <label htmlFor="pTitle">Position Title:</label>
-                        <input type='text' title="pTitle"></input> 
+                        <input type='text' title="pTitle" id='pTitle' onChange={this.onChangeExp}></input> 
                     </div>
                     <div>
                             <label htmlFor="mTasks">Main Responsibilities:</label>
-                        <input type='text' title="mTasks" id="mTasksInput"></input> 
+                        <input type='text' title="mTasks" id="mTasks" onChange={this.onChangeExp}></input> 
                     </div>
                     <div>
                             <label htmlFor="sDate">Start Date:</label>
-                        <input type='date' title="sDate"></input> 
+                        <input type='date' title="sDate" id='sDate' onChange={this.onChangeExp}></input> 
                     </div>
                     <div>
                             <label htmlFor="eDate">End Date:</label>
-                        <input type='date' title="eDate"></input> 
+                        <input type='date' title="eDate" id='eDate' onChange={this.onChangeExp}></input> 
                     </div>
                     <button type="submit">Enter</button>
                 </form>
               </div>
             </div>
-            <h2><u>Your Information</u></h2>
-            <div className='yourResponse'> 
-                <div className='genInfoResponse'>
-                  <h3><u>Your General Information</u></h3>
-                  {this.state.genInfo.fname}<br/>
-                  {this.state.genInfo.lname}<br/>
-                  {this.state.genInfo.email}<br/>
-                  {this.state.genInfo.phone}<br/>
-                  {this.state.genInfo.description}
-                  {/* <General/> */}
-                </div>
-                <div className='edInfoResponse'>
-                  <h3><u>Your Education</u></h3>
-                  {/* <Education/> */}
-                </div>
-                <div className='expInfoResponse'>
-                  <h3><u>Your Experience</u></h3>
-                  {/* <Experience/> */}
-                </div>
-            </div>
+            <h2><u>Your CV</u></h2>
+            <div className='responseContainer'>
+              <div className='yourResponse'> 
+                
+                  <div className='genInfoResponse'>
+                    <div className='genInfoContainer'>
+                      <div className='nameTitle'>
+                        <p className='genNameResponse'> 
+                          {this.state.genInfo.fname} {this.state.genInfo.lname}
+                        </p>
+                        <p className='genTitleResponse'>
+                          {this.state.genInfo.title}
+                        </p>
+                      </div>
+                      <div className='genContactInfo'>
+                        <p>
+                          {this.state.genInfo.phone} 
+                        </p>
+                        <p> 
+                          {this.state.genInfo.email}
+                        </p>
+                        <p>
+                          {this.state.genInfo.location}
+                        </p>
+                      </div>
+                    </div>
+                    <div className='genDescription'>
+                      <p>
+                        {this.state.genInfo.description}
+                      </p>
+                    </div>
+                    {/* <General/> */}
+                  </div>
+                  <div className='edInfoResponseContainer'>
+                    <h3 id='edHeader'>Education</h3>
+                    <p className='edInfoResponse'>
+                      <span className='edAreaOfStudyResponse'>
+                        {this.state.edInfo.areaOfStudy}  
+                      </span>
+                      <span className='edSNameResponse'>
+                        {this.state.edInfo.schoolName} 
+                      </span>
+                       || 
+                      <span className='edDateResponse'>
+                         {this.state.edInfo.date}
+                      </span>
+                    </p>
+                    {/* <Education/> */}
+                  </div>
+                  <div className='expInfoResponse'>
+                    <h3 id='expHeader'>Experience</h3>
+                    
+                      <p className='expTitleNameDates'>
+                          <span className='expPTitle'>
+                            {this.state.expInfo.pTitle}  
+                          </span> 
+
+                          <span className='expCName'>
+                            {this.state.expInfo.cName} ||
+                          </span> 
+                          
+                          <span className='expDates'>
+                            {this.state.expInfo.sDate} - {this.state.expInfo.eDate} 
+                          </span>
+                      </p>
+                    
+                    <div className='expDescription'>
+                      {this.state.expInfo.mTasks} <br/>
+                    </div>
+                    {/* <Experience/> */}
+                  </div>
+                
+              </div>
+            </div>  
       </div>
     );
   }

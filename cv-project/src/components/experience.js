@@ -1,39 +1,33 @@
 import React, { Component } from "react";
 import '../index.css'
 
-class Experience extends Component {
-    constructor() {
-        super();
-    }
-
+class Experience extends React.Component {
     render() {
-        return (
-            <div>
-                <form className="experienceInfo">
-                    <div>
-                            <label htmlFor="cName">Company Name:</label>
-                        <input type='text' title="cName"></input> 
-                    </div>
-                    <div>
-                            <label htmlFor="pTitle">Position Title:</label>
-                        <input type='text' title="pTitle"></input> 
-                    </div>
-                    <div>
-                            <label htmlFor="mTasks">Main Responsibilities:</label>
-                        <input type='text' title="mTasks" id="mTasksInput"></input> 
-                    </div>
-                    <div>
-                            <label htmlFor="sDate">Start Date:</label>
-                        <input type='date' title="sDate"></input> 
-                    </div>
-                    <div>
-                            <label htmlFor="eDate">End Date:</label>
-                        <input type='date' title="eDate"></input> 
-                    </div>
-                    <button type="submit">Enter</button>
-                </form>
+        const {
+            expInfo,
+            expInfo: { cName, pTitle, mTasks, sDate, eDate }
+        } = this.props;
+
+    return (
+        <div>
+           <h3 id='expHeader'>Experience</h3> 
+           <p className='expTitleNameDates'>
+                <span className='expPTitle'>
+                    {pTitle}  
+                </span> 
+                <span className='expCName'>
+                    {cName}
+                </span>  
+                ||
+                <span className='expDates'>
+                    {sDate} - {eDate} 
+                </span>
+            </p>
+            <div className='expDescription'>
+                {mTasks} <br/>
             </div>
-        );
+        </div>
+    )
     }
 }
 

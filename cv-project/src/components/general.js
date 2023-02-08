@@ -2,33 +2,40 @@ import React, { Component } from "react";
 import '../index.css'
 
 
-class General extends Component {
-    constructor() {
-        super();
-    }
-
-    render() {
+class General extends React.Component {
+     render() {
+         const {
+            genInfo,
+            genInfo : { fname, lname, title, phone, email, location, description }
+         } = this.props;
         return (
             <div>
-                <form className="genInfo">
-                    <div>
-                        <label htmlFor="fname">First Name:</label>
-                    <input type='text' title='fname'></input>
+                <div className='genInfoContainer'>
+                      <div className='nameTitle'>
+                        <p className='genNameResponse'> 
+                          {fname} {lname}
+                        </p>
+                        <p className='genTitleResponse'>
+                          {title}
+                        </p>
+                      </div>
+                      <div className='genContactInfo'>
+                        <p>
+                          {phone} 
+                        </p>
+                        <p> 
+                          {email}
+                        </p>
+                        <p>
+                          {location}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                            <label htmlFor="lname">Last Name:</label>
-                        <input type='text' title='lname'></input>
+                    <div className='genDescription'>
+                      <p>
+                        {description}
+                      </p>
                     </div>
-                    <div>
-                            <label htmlFor="email">Email:</label>
-                        <input type='email' title='email'></input>
-                    </div>
-                    <div>
-                            <label htmlFor="phoneNum">Phone Number:</label>
-                        <input type='tel' title='phoneNum'></input>
-                    </div>
-                    <button type="submit">Submit</button>
-                </form>
             </div>
         );
     }

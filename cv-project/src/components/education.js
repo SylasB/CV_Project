@@ -1,31 +1,47 @@
-import React, { Component } from "react";
+import React, { Component, createElement } from "react";
 import '../index.css'
 
-class Education extends Component {
-    constructor() {
-        super();
-    }
-
+class Education extends React.Component {
     render() {
-        return (
-            <div >
-                <form className="educationInfo">
-                    <div>
-                            <label htmlFor='schoolName'>School Name:</label>
-                        <input type='text' title="schoolName"></input> 
-                    </div>
-                    <div>
-                            <label htmlFor='areaOfStudy'>Area Of Study:</label>
-                        <input type='text' title="areaOfStudy"></input> 
-                    </div>
-                    <div>
-                            <label htmlFor='date'>Date of Completion:</label>
-                        <input type='date' title="date"></input> 
-                    </div>
-                    <button type="submit">Enter</button>
-                </form>
-            </div>
-        );
+        const {
+            edInfo,
+            edInfo: { schoolName, areaOfStudy, date, id },
+            edInfoFilled,
+        } = this.props;
+
+   
+
+   function addEdInfo() {
+        const newEdInfo = document.getElementById('newEdInfo')
+        const newDiv = document.createElement('div')
+        newDiv.innerText = edInfoFilled.slice(-3)
+        newEdInfo.appendChild(newDiv);
+   };
+
+    return (
+        <div>
+            {/* <h3 id='edHeader'>Education</h3> */}
+            <p className='edInfoResponse'>
+                <span className='edAreaOfStudyResponse'>
+                    {areaOfStudy}  
+                 </span>
+                <span className='edSNameResponse'>
+                    {schoolName} 
+                </span>
+                    || 
+                <span className='edDateResponse'>
+                    {date}
+                </span>
+                {id}
+            </p>
+            <span className="edInfoResponse" id="newEdInfo">
+                
+                {/* {
+                    edInfoFilled.slice(-3)
+                } */}
+            </span>
+        </div>
+    )
     }
 }
 

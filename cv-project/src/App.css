@@ -11,8 +11,8 @@
   border: 2px solid rgb(0, 5, 7);
   border-radius: 2px;
   margin: 3vw;
-  height: 100vh;
-  width: 80%;
+  height: 1250px;
+  width: 1000px;
 }
 
 /* .genInfoResponse,
@@ -61,6 +61,7 @@
 
 .genDescription {
   padding-left: 1vw;
+  padding-right: 1vw;
 }
 
 .edInfoResponseContainer {
@@ -78,6 +79,7 @@
 
 .edInfoResponse {
   display: flex;
+  padding-right: 1vw;
 }
 
 .edAreaOfStudyResponse {
@@ -96,6 +98,10 @@
   font-weight: 600;
 }
 
+.lineBreak {
+  white-space: pre-line;
+}
+
 .expInfoResponse {
   margin-left: 1vw;
   margin-right: 1vw;
@@ -108,6 +114,7 @@
 #expHeader {
   color: darkblue;
   padding-left: 1vw;
+  padding-right: 1vw;
 }
 
 .expTitleNameDates {
@@ -125,6 +132,12 @@
   text-decoration: underline;
 }
 
+.expDates {
+  padding-right: 1vw;
+  font-weight: 600;
+}
+
 .expDescription {
   margin-left: 1vw;
+  padding-right: 1vw;
 }

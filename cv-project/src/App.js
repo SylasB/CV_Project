@@ -74,6 +74,22 @@ class App extends Component {
     console.log(this.state.edInfoFilled);
   }
 
+  handleEditemAdd = () => {
+    const id = uniqid();
+    this.setState((prevState) => ({
+      ...prevState,
+        education: [
+          ...prevState.education, 
+            {
+              id,
+              schoolName : '',
+              areaOfStudy : '',
+              date : '',
+            }
+        ]
+    }))
+  }
+
   onChangeExp = (e) => {
     let expInfo = { ...this.state.expInfo };
     expInfo[e.target.id] = e.target.value;

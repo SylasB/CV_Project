@@ -32,7 +32,6 @@ class Education extends React.Component {
                 <span className='edDateResponse'>
                     {date}
                 </span>
-                {id}
             </p>
             <span className="edInfoResponse" id="newEdInfo">
                 

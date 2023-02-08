@@ -74,7 +74,7 @@ class App extends Component {
     console.log(this.state.edInfoFilled);
   }
 
-  handleEditemAdd = () => {
+  handleEdItemAdd = () => {
     const id = uniqid();
     this.setState((prevState) => ({
       ...prevState,
@@ -108,9 +108,10 @@ class App extends Component {
       <div className="App">
           <header> <h1>CV-Project</h1> </header>
             <div className='generalInfoContainer'>
-              <h2>General Information</h2>
-              <div>
+              
+              
                 <form className="genInfo">
+                  <h2>General Information</h2>
                     <div>
                         <label htmlFor="fname" >First Name:</label>
                     <input type='text' title='fname' id='fname' onChange={this.onChange}></input>
@@ -140,12 +141,13 @@ class App extends Component {
                         <input type='text' title='description' placeholder='Description' id='description' onChange={this.onChange}></input>
                     </div>
                 </form>
-              </div>
+              
             </div>
-            <div className='educationContainer'>
-              <h2>Education</h2>
-              <div>
+            <div className='educationInfoContainer'>
+              
+              
                 <form className="educationInfo" onSubmit={this.onSubmitEd}>
+                  <h2>Education</h2>
                     <div>
                             <label htmlFor='schoolName'>School Name:</label>
                         <input type='text' title="schoolName" id='schoolName' onChange={this.onChangeEd}></input> 
@@ -160,13 +162,14 @@ class App extends Component {
                     </div>
                     <button type="submit">Enter</button>
                 </form>
-              </div>
+              
             </div>
-            <div className='experienceContainer'>
-              <h2>Experience</h2>
-              <div>
+            <div className='experienceInfoContainer'>
+             
+              
                 {/* <Experience/> */}
                 <form className="experienceInfo">
+                   <h2>Experience</h2>
                     <div>
                             <label htmlFor="cName">Company Name:</label>
                         <input type='text' title="cName" id='cName' onChange={this.onChangeExp}></input> 
@@ -187,9 +190,11 @@ class App extends Component {
                             <label htmlFor="eDate">End Date:</label>
                         <input type='date' title="eDate" id='eDate' onChange={this.onChangeExp}></input> 
                     </div>
-                    <button type="submit">Enter</button>
+                    <button type='button'>Add Experience</button>
+                    <button type="submit">Confirm</button>
+                   
                 </form>
-              </div>
+              
             </div>
             <h2><u>Your CV</u></h2>
             <div className='responseContainer'>

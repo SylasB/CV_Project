@@ -23,6 +23,40 @@
   border: 2px solid green;
 } */
 
+.generalInfoContainer,
+.educationInfoContainer,
+.experienceInfoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+}
+
+.genInfo,
+.educationInfo,
+.experienceInfo {
+  padding: 1vw;
+  margin: 1vw;
+  align-self: center;
+  border: 2px solid black;
+}
+
+.educationInfoContainer {
+  border: 2px solid red;
+}
+
+.educationInfo {
+  border: 2px solid red;
+}
+
+.experienceInfoContainer {
+  border: 2px solid green;
+}
+
+.experienceInfo {
+  border: 2px solid green;
+}
+
 .genInfoResponse {
   margin-left: 1vw;
   margin-right: 1vw;

@@ -17,12 +17,10 @@ class Experience extends React.Component {
                 </span> 
                 <span className='expCName'>
                     {cName}
-                </span>  
-                <span>
-                   || 
                 </span>
+                    || 
                 <span className='expDates'>
-                    {sDate} - {eDate} 
+                    {sDate} Until {eDate} 
                 </span>
             </p>
             <div className='expDescription'>

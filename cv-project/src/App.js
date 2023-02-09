@@ -96,6 +96,10 @@ class App extends Component {
     this.setState({ expInfo });
   };
 
+  onSubmitExp = (e) => {
+    e.preventDefault();
+  }
+
   render() {
     const {
       genInfo,
@@ -106,88 +110,86 @@ class App extends Component {
 
     return (
       <div className="App">
-          <header> <h1>CV-Project</h1> </header>
+        <header> <h1>CV-Project</h1> </header>
+        <div className='cvProjectContainer'>
             <div className='generalInfoContainer'>
               
               
                 <form className="genInfo">
-                  <h2>General Information</h2>
+                  <h2><u> General Information</u></h2>
                     <div>
-                        <label htmlFor="fname" >First Name:</label>
-                    <input type='text' title='fname' id='fname' onChange={this.onChange}></input>
+                        {/* <label htmlFor="fname" >First Name:</label> */}
+                    <input type='text' title='fname' id='fname' placeholder='First Name' onChange={this.onChange}></input>
                     </div>
                     <div>
-                            <label htmlFor="lname">Last Name:</label>
-                        <input type='text' title='lname' id='lname' onChange={this.onChange}></input>
+                            {/* <label htmlFor="lname">Last Name:</label> */}
+                        <input type='text' title='lname' id='lname' placeholder='Last Name' onChange={this.onChange}></input>
                     </div>
                     <div>
-                            <label htmlFor='title'>Title: </label>
-                        <input type='text' title='title' id='title' onChange={this.onChange}></input>
+                            {/* <label htmlFor='title'>Title: </label> */}
+                        <input type='text' title='title' id='title' placeholder='Title' onChange={this.onChange}></input>
                     </div>
                     <div>
-                            <label htmlFor="email">Email:</label>
-                        <input type='email' title='email'id='email' onChange={this.onChange}></input>
+                            {/* <label htmlFor="email">Email:</label> */}
+                        <input type='email' title='email'id='email' placeholder='Email' onChange={this.onChange}></input>
                     </div>
                     <div> 
-                            <label htmlFor='location'>Loaction: </label>
-                        <input type='text' title='location' id='location' onChange={this.onChange}></input>
+                            {/* <label htmlFor='location'>Loaction: </label> */}
+                        <input type='text' title='location' id='location' placeholder='location' onChange={this.onChange}></input>
                     </div>
                     <div>
-                            <label htmlFor="phoneNum">Phone Number:</label>
-                        <input type='tel' title='phoneNum'id='phone' onChange={this.onChange}></input>
+                            {/* <label htmlFor="phoneNum">Phone Number:</label> */}
+                        <input type='tel' title='phoneNum'id='phone' placeholder='Phone Number' onChange={this.onChange}></input>
                     </div>
                     <div>
-                          <label htmlFor='description'>Description</label>
+                          {/* <label htmlFor='description'>Description</label> */}
                         <input type='text' title='description' placeholder='Description' id='description' onChange={this.onChange}></input>
                     </div>
                 </form>
               
             </div>
             <div className='educationInfoContainer'>
-              
-              
-                <form className="educationInfo" onSubmit={this.onSubmitEd}>
-                  <h2>Education</h2>
+              <form className="educationInfo" onSubmit={this.onSubmitEd}>
+                  <h2><u>Education</u></h2>
                     <div>
-                            <label htmlFor='schoolName'>School Name:</label>
-                        <input type='text' title="schoolName" id='schoolName' onChange={this.onChangeEd}></input> 
+                            {/* <label htmlFor='schoolName'>School Name:</label> */}
+                        <input type='text' title="schoolName" id='schoolName' placeholder='School Name' onChange={this.onChangeEd}></input> 
                     </div>
                     <div>
-                            <label htmlFor='areaOfStudy'>Area Of Study:</label>
-                        <input type='text' title="areaOfStudy" id='areaOfStudy' onChange={this.onChangeEd}></input> 
+                            {/* <label htmlFor='areaOfStudy'>Area Of Study:</label> */}
+                        <input type='text' title="areaOfStudy" id='areaOfStudy' placeholder='Area Of Study' onChange={this.onChangeEd}></input> 
                     </div>
                     <div>
-                            <label htmlFor='date'>Date of Completion:</label>
+                            {/* <label htmlFor='date'>Date of Completion:</label> */}
                         <input type='date' title="date" id='date' onChange={this.onChangeEd}></input> 
                     </div>
-                    <button type="submit">Enter</button>
+                    <button type='button'>Add Education</button>
+                    <button type="submit">Confirm</button>
                 </form>
               
             </div>
             <div className='experienceInfoContainer'>
-             
-              
-                {/* <Experience/> */}
-                <form className="experienceInfo">
-                   <h2>Experience</h2>
+              {/* <Experience/> */}
+                <form className="experienceInfo" onSubmit={this.onSubmitExp}>
+                   <h2><u>Experience</u></h2>
                     <div>
-                            <label htmlFor="cName">Company Name:</label>
-                        <input type='text' title="cName" id='cName' onChange={this.onChangeExp}></input> 
+                            {/* <label htmlFor="cName">Company Name:</label> */}
+                        <input type='text' title="cName" id='cName' placeholder='Company Name' onChange={this.onChangeExp}></input> 
                     </div>
                     <div>
-                            <label htmlFor="pTitle">Position Title:</label>
-                        <input type='text' title="pTitle" id='pTitle' onChange={this.onChangeExp}></input> 
+                            {/* <label htmlFor="pTitle">Position Title:</label> */}
+                        <input type='text' title="pTitle" id='pTitle' placeholder='Position Title' onChange={this.onChangeExp}></input> 
                     </div>
                     <div>
-                            <label htmlFor="mTasks">Main Responsibilities:</label>
-                        <input type='text' title="mTasks" id="mTasks" onChange={this.onChangeExp}></input> 
+                            {/* <label htmlFor="mTasks">Main Responsibilities:</label> */}
+                        <input type='text' title="mTasks" id="mTasks" placeholder='Main Responsibilities' onChange={this.onChangeExp}></input> 
                     </div>
                     <div>
-                            <label htmlFor="sDate">Start Date:</label>
-                        <input type='date' title="sDate" id='sDate' onChange={this.onChangeExp}></input> 
+                            {/* <label htmlFor="sDate">Start Date:</label> */}
+                        <input type='date' title="sDate" id='sDate' placeholder='Start Date' onChange={this.onChangeExp}></input> 
                     </div>
                     <div>
-                            <label htmlFor="eDate">End Date:</label>
+                            {/* <label htmlFor="eDate">End Date:</label> */}
                         <input type='date' title="eDate" id='eDate' onChange={this.onChangeExp}></input> 
                     </div>
                     <button type='button'>Add Experience</button>
@@ -196,7 +198,8 @@ class App extends Component {
                 </form>
               
             </div>
-            <h2><u>Your CV</u></h2>
+          </div>
+            <h2 id='yourCVTitle'><u>Your CV</u></h2>
             <div className='responseContainer'>
               <div className='yourResponse'> 
                 <div className='genInfoResponse'>  

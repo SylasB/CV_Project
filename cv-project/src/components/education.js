@@ -9,15 +9,6 @@ class Education extends React.Component {
             edInfoFilled,
         } = this.props;
 
-   
-
-   function addEdInfo() {
-        const newEdInfo = document.getElementById('newEdInfo')
-        const newDiv = document.createElement('div')
-        newDiv.innerText = edInfoFilled.slice(-3)
-        newEdInfo.appendChild(newDiv);
-   };
-
     return (
         <div>
             {/* <h3 id='edHeader'>Education</h3> */}
@@ -34,10 +25,7 @@ class Education extends React.Component {
                 </span>
             </p>
             <span className="edInfoResponse" id="newEdInfo">
-                
-                {/* {
-                    edInfoFilled.slice(-3)
-                } */}
+            
             </span>
         </div>
     )

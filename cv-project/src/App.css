@@ -39,7 +39,7 @@ header {
 .generalInfoContainer,
 .educationInfoContainer,
 .experienceInfoContainer {
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
   margin: 2vw;
@@ -51,7 +51,7 @@ header {
 .experienceInfo {
   padding: 1vw;
   margin: 1vw;
-  height: 50vh;
+  min-height: 50vh;
   width: 20vw;
   border: 2px solid black;
   background-color: white;

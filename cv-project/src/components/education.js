@@ -11,7 +11,7 @@ class Education extends React.Component {
 
     return (
         <div>
-            {/* <h3 id='edHeader'>Education</h3> */}
+            {/* <h3 id='edHeader'>Education</h3>
             <p className='edInfoResponse'>
                 <span className='edAreaOfStudyResponse'>
                     {areaOfStudy}  
@@ -26,7 +26,7 @@ class Education extends React.Component {
             </p>
             <span className="edInfoResponse" id="newEdInfo">
             
-            </span>
+            </span> */}
         </div>
     )
     }

@@ -4,7 +4,9 @@ import './App.css';
 import uniqid from 'uniqid';
 import General from './components/general';
 import Education from './components/education';
+import DisplayEd from './components/DisplayEd';
 import Experience from './components/experience';
+import DisplayExp from './components/DisplayExp';
 
 
 class App extends Component {
@@ -21,25 +23,22 @@ class App extends Component {
         location: ['Location'],
         description: ['Description'],
       }, 
-      education : [ ], 
-      experience : [ ],
 
-      edInfo: {
+      edInfo: [{
         schoolName : 'School Name',
         areaOfStudy : 'Area Of Study',
         date : 'Date of Completion',
         id : uniqid(),
-      },
-      edInfoFilled : [ ],
+      }],
 
-      expInfo : {
-        cName : ['Company Name'],
-        pTitle : ['Position Title'],
-        mTasks : ['Job Description'],
-        sDate : ['Start Date'],
-        eDate : ['End Date'],
-      },
-      expInfoFilled : ['Test'],
+      expInfo : [{
+        cName : 'Company Name',
+        pTitle : 'Position Title',
+        mTasks : 'Job Description',
+        sDate : 'Start Date',
+        eDate : 'End Date',
+        id : uniqid(),
+      }],
     }
   }
 
@@ -57,22 +56,292 @@ class App extends Component {
     this.setState({ edInfo });
   };
 
+
+  //This is the start of the code that i redid inorder to add new features
+  addInputsEd = () => {
+    const newInputsEd = {
+      id: uniqid(), 
+      schoolName : 'School Name',
+      areaOfStudy : 'Area Of Study',
+      date : 'Date of Completion',
+    }
+    this.setState({
+      edInfo: [...this.state.edInfo, newInputsEd]
+    });
+  };
+
+  //The onchange functions for the Ed section
+  onInputChangeEdSchoolName = (e) => {
+    const { id, value } = e.target;
+
+    const newArr = this.state.edInfo.map(item => {
+      if (item.id == id) {
+        return {
+          ...item,
+          schoolName: value 
+          };
+        } else {
+          return item;
+        }
+      });
+
+    this.setState({
+      edInfo: newArr
+    });
+  };
+  onInputChangeEdAreaOfStudy = (e) => {
+    const { id, value } = e.target;
+
+    const newArr = this.state.edInfo.map(item => {
+      if (item.id == id) {
+        return {
+          ...item,
+          areaOfStudy: value 
+          };
+        } else {
+          return item;
+        }
+      });
+
+    this.setState({
+      edInfo: newArr
+    });
+  };
+  onInputChangeEdDate = (e) => {
+    const { id, value } = e.target;
+
+    const newArr = this.state.edInfo.map(item => {
+      if (item.id == id) {
+        return {
+          ...item,
+          date: value 
+          };
+        } else {
+          return item;
+        }
+      });
+
+    this.setState({
+      edInfo: newArr
+    });
+  };
+
+  //This function creates the inputs for the Ed section
+  createListEd = () => {
+    const { edInfo } = this.state;
+    return edInfo.map(item => {
+      return (
+         <div key={item.id} >
+            <div>
+              <input 
+              type='text' 
+              id={item.id} 
+              value={item.schoolName} 
+              placeholder='School Name' 
+              onChange={this.onInputChangeEdSchoolName}></input> 
+            </div>
+            <div>
+              <input type='text' id={item.id} value={item.areaOfStudy} placeholder='Area Of Study' onChange={this.onInputChangeEdAreaOfStudy}></input> 
+            </div>
+            <div>
+              <input type='text' id={item.id} value={item.date} onChange={this.onInputChangeEdDate}></input> 
+            </div>
+          </div>
+      )
+    })
+  };
+
+  //This is the start of the Experience Section of code
+  //The first function adds new inputs when called
+  addInputsExp = () => {
+    const newInputsExp = {
+      id: uniqid(), 
+      cName : 'Company Name',
+      pTitle : 'Position Title',
+      mTasks : 'Job Description',
+      sDate : 'Start Date',
+      eDate : 'End Date',
+    }
+    this.setState({
+      expInfo: [...this.state.expInfo, newInputsExp]
+    });
+  }
+
+  //This section changes the specific values of the selected inputs for the EXP section
+  //This function changes the name of the company
+  onInputChangeExpCName = (e) => {
+    const { id, value } = e.target;
+
+    const newArr = this.state.expInfo.map(item => {
+      if (item.id == id) {
+        return {
+          ...item,
+          cName: value 
+          };
+        } else {
+          return item;
+        }
+      });
+
+    this.setState({
+      expInfo: newArr
+    });
+  };
+  //Changes the name of the position
+  onInputChangeExpPTitle = (e) => {
+    const { id, value } = e.target;
+
+    const newArr = this.state.expInfo.map(item => {
+      if (item.id == id) {
+        return {
+          ...item,
+          pTitle: value 
+          };
+        } else {
+          return item;
+        }
+      });
+
+    this.setState({
+      expInfo: newArr
+    });
+  };
+  //Changes the job description  (mTasks) 
+  onInputChangeExpMTasks = (e) => {
+    const { id, value } = e.target;
+
+    const newArr = this.state.expInfo.map(item => {
+      if (item.id == id) {
+        return {
+          ...item,
+          mTasks: value 
+          };
+        } else {
+          return item;
+        }
+      });
+
+    this.setState({
+      expInfo: newArr
+    });
+  };
+  //Changes the start date
+  onInputChangeExpSDate = (e) => {
+    const { id, value } = e.target;
+
+    const newArr = this.state.expInfo.map(item => {
+      if (item.id == id) {
+        return {
+          ...item,
+          sDate: value 
+          };
+        } else {
+          return item;
+        }
+      });
+
+    this.setState({
+      expInfo: newArr
+    });
+  };
+  //Changes the end date
+  onInputChangeExpEDate = (e) => {
+    const { id, value } = e.target;
+
+    const newArr = this.state.expInfo.map(item => {
+      if (item.id == id) {
+        return {
+          ...item,
+          eDate: value 
+          };
+        } else {
+          return item;
+        }
+      });
+
+    this.setState({
+      expInfo: newArr
+    });
+  };
+
+  //This section creates all of the inputs for the exp section
+  createListExp = () => {
+    const { expInfo } = this.state;
+    return expInfo.map(item => {
+      return (
+         <div key={item.id} >
+            <div>
+              <input 
+              type='text' 
+              id={item.id} 
+              value={item.cName} 
+              placeholder='Company Name' 
+              onChange={this.onInputChangeExpCName}></input> 
+          </div>
+          <div>
+                <input 
+                type='text' 
+                id={item.id} 
+                value={item.pTitle} 
+                placeholder='Position Title' 
+                onChange={this.onInputChangeExpPTitle}>
+                </input> 
+          </div>
+          <div>
+            <input 
+            type='text' 
+            id={item.id} 
+            value={item.mTasks} 
+            placeholder='Main Responsibilities'
+            onChange={this.onInputChangeExpMTasks}>
+            </input> 
+           </div>
+           <div>
+              <input 
+              type='text' 
+              id={item.id} 
+              value={item.sDate} 
+              placeholder='Start Date'
+              onChange={this.onInputChangeExpSDate}>
+              </input> 
+           </div>
+           <div>
+              <input 
+              type='text' 
+              id={item.id} 
+              value={item.eDate} 
+              placeholder='End Date'
+              onChange={this.onInputChangeExpEDate}>
+              </input> 
+           </div>
+        </div>
+      )
+    })
+  };
+
+
+
+
+  //-----------------------------------------------------------------------------
+
   //This section of code is an on going battle and has defeted me a few times. 
   //If you are able to fix it please tell me how as you are a better man than I
   onSubmitEd = (e) => {
     e.preventDefault();
-    const newEdInfo = [this.state.edInfo.schoolName, this.state.edInfo.areaOfStudy, this.state.edInfo.date ]
-    this.setState(prevState => ({
-        edInfoFilled: [...prevState.edInfoFilled, ...newEdInfo],
-        // edInfo: {
-        //   schoolName : 'School Name',
-        //   areaOfStudy : 'Area Of Study',
-        //   date : 'Date of Completion',
-        //   id : uniqid(),
-        // }
-    })) 
-    console.log(this.state.edInfoFilled);
+    // const newEdInfo = [this.state.edInfo.schoolName, this.state.edInfo.areaOfStudy, this.state.edInfo.date ]
+    // this.setState(prevState => ({
+    //     edInfoFilled: [...prevState.edInfoFilled, ...newEdInfo],
+    //     // edInfo: {
+    //     //   schoolName : 'School Name',
+    //     //   areaOfStudy : 'Area Of Study',
+    //     //   date : 'Date of Completion',
+    //     //   id : uniqid(),
+    //     // }
+    // })) 
+    // console.log(this.state.edInfoFilled);
   }
+
+
 
   handleEdItemAdd = () => {
     const id = uniqid();
@@ -149,53 +418,19 @@ class App extends Component {
               
             </div>
             <div className='educationInfoContainer'>
-              <form className="educationInfo" onSubmit={this.onSubmitEd}>
+              <div className="educationInfo">
                   <h2><u>Education</u></h2>
-                    <div>
-                            {/* <label htmlFor='schoolName'>School Name:</label> */}
-                        <input type='text' title="schoolName" id='schoolName' placeholder='School Name' onChange={this.onChangeEd}></input> 
-                    </div>
-                    <div>
-                            {/* <label htmlFor='areaOfStudy'>Area Of Study:</label> */}
-                        <input type='text' title="areaOfStudy" id='areaOfStudy' placeholder='Area Of Study' onChange={this.onChangeEd}></input> 
-                    </div>
-                    <div>
-                            {/* <label htmlFor='date'>Date of Completion:</label> */}
-                        <input type='date' title="date" id='date' onChange={this.onChangeEd}></input> 
-                    </div>
-                    <button type='button'>Add Education</button>
-                    <button type="submit">Confirm</button>
-                </form>
+                    {this.createListEd()}
+                    <button type='button' onClick={this.addInputsEd}>Add Education</button>
+                </div>
               
             </div>
             <div className='experienceInfoContainer'>
-              {/* <Experience/> */}
-                <form className="experienceInfo" onSubmit={this.onSubmitExp}>
+                <div className="experienceInfo">
                    <h2><u>Experience</u></h2>
-                    <div>
-                            {/* <label htmlFor="cName">Company Name:</label> */}
-                        <input type='text' title="cName" id='cName' placeholder='Company Name' onChange={this.onChangeExp}></input> 
-                    </div>
-                    <div>
-                            {/* <label htmlFor="pTitle">Position Title:</label> */}
-                        <input type='text' title="pTitle" id='pTitle' placeholder='Position Title' onChange={this.onChangeExp}></input> 
-                    </div>
-                    <div>
-                            {/* <label htmlFor="mTasks">Main Responsibilities:</label> */}
-                        <input type='text' title="mTasks" id="mTasks" placeholder='Main Responsibilities' onChange={this.onChangeExp}></input> 
-                    </div>
-                    <div>
-                            {/* <label htmlFor="sDate">Start Date:</label> */}
-                        <input type='date' title="sDate" id='sDate' placeholder='Start Date' onChange={this.onChangeExp}></input> 
-                    </div>
-                    <div>
-                            {/* <label htmlFor="eDate">End Date:</label> */}
-                        <input type='date' title="eDate" id='eDate' onChange={this.onChangeExp}></input> 
-                    </div>
-                    <button type='button'>Add Experience</button>
-                    <button type="submit">Confirm</button>
-                   
-                </form>
+                   {this.createListExp()}
+                   <button type='button' onClick={this.addInputsExp}>Add Experience</button>
+                </div>
               
             </div>
           </div>
@@ -207,11 +442,10 @@ class App extends Component {
                 </div>
                   <div className='edInfoResponseContainer'>
                     <h3 id='edHeader'>Education</h3>
-                    <Education edInfo = {edInfo} edInfoFilled = {edInfoFilled}/>
-                    {/* {this.edInfoFilled} */}
+                    <DisplayEd edInfo={edInfo}/>
                   </div>
                   <div className='expInfoResponse'>
-                    <Experience expInfo = {expInfo}/>
+                    <DisplayExp expInfo={expInfo}/>
                   </div>
                 
               </div>

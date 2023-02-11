@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import '../index.css'
+import '../App.css'
 
 
 class General extends React.Component {

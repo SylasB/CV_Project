@@ -139,11 +139,9 @@ class App extends Component {
               value={item.schoolName} 
               placeholder='School Name' 
               onChange={this.onInputChangeEdSchoolName}></input> 
-            </div>
-            <div>
+           
               <input type='text' id={item.id} value={item.areaOfStudy} placeholder='Area Of Study' onChange={this.onInputChangeEdAreaOfStudy}></input> 
-            </div>
-            <div>
+            
               <input type='text' id={item.id} value={item.date} onChange={this.onInputChangeEdDate}></input> 
             </div>
           </div>
@@ -269,7 +267,7 @@ class App extends Component {
     const { expInfo } = this.state;
     return expInfo.map(item => {
       return (
-         <div key={item.id} >
+         <div className='expInputsContainer' key={item.id} >
             <div>
               <input 
               type='text' 
@@ -277,8 +275,7 @@ class App extends Component {
               value={item.cName} 
               placeholder='Company Name' 
               onChange={this.onInputChangeExpCName}></input> 
-          </div>
-          <div>
+          
                 <input 
                 type='text' 
                 id={item.id} 
@@ -287,15 +284,6 @@ class App extends Component {
                 onChange={this.onInputChangeExpPTitle}>
                 </input> 
           </div>
-          <div>
-            <input 
-            type='text' 
-            id={item.id} 
-            value={item.mTasks} 
-            placeholder='Main Responsibilities'
-            onChange={this.onInputChangeExpMTasks}>
-            </input> 
-           </div>
            <div>
               <input 
               type='text' 
@@ -304,8 +292,7 @@ class App extends Component {
               placeholder='Start Date'
               onChange={this.onInputChangeExpSDate}>
               </input> 
-           </div>
-           <div>
+           
               <input 
               type='text' 
               id={item.id} 
@@ -314,6 +301,17 @@ class App extends Component {
               onChange={this.onInputChangeExpEDate}>
               </input> 
            </div>
+          <div>
+            <input 
+            className='mTasksResponsibilitiesInput'
+            type='text' 
+            id={item.id} 
+            value={item.mTasks} 
+            placeholder='Main Responsibilities'
+            onChange={this.onInputChangeExpMTasks}>
+            </input> 
+           </div>
+          
         </div>
       )
     })
@@ -381,6 +379,7 @@ class App extends Component {
       <div className="App">
         <header> <h1>CV-Project</h1> </header>
         <div className='cvProjectContainer'>
+          <div className='userInputsContainer'>
             <div className='generalInfoContainer'>
               
               
@@ -389,24 +388,20 @@ class App extends Component {
                     <div>
                         {/* <label htmlFor="fname" >First Name:</label> */}
                     <input type='text' title='fname' id='fname' placeholder='First Name' onChange={this.onChange}></input>
-                    </div>
-                    <div>
+                    
                             {/* <label htmlFor="lname">Last Name:</label> */}
                         <input type='text' title='lname' id='lname' placeholder='Last Name' onChange={this.onChange}></input>
-                    </div>
-                    <div>
+                    
                             {/* <label htmlFor='title'>Title: </label> */}
                         <input type='text' title='title' id='title' placeholder='Title' onChange={this.onChange}></input>
                     </div>
                     <div>
                             {/* <label htmlFor="email">Email:</label> */}
                         <input type='email' title='email'id='email' placeholder='Email' onChange={this.onChange}></input>
-                    </div>
-                    <div> 
+                    
                             {/* <label htmlFor='location'>Loaction: </label> */}
                         <input type='text' title='location' id='location' placeholder='location' onChange={this.onChange}></input>
-                    </div>
-                    <div>
+                    
                             {/* <label htmlFor="phoneNum">Phone Number:</label> */}
                         <input type='tel' title='phoneNum'id='phone' placeholder='Phone Number' onChange={this.onChange}></input>
                     </div>
@@ -415,6 +410,7 @@ class App extends Component {
                         <input type='text' title='description' placeholder='Description' id='description' onChange={this.onChange}></input>
                     </div>
                 </form>
+              
               
             </div>
             <div className='educationInfoContainer'>
@@ -433,6 +429,7 @@ class App extends Component {
                 </div>
               
             </div>
+          </div>  
           </div>
             <h2 id='yourCVTitle'><u>Your CV</u></h2>
             <div className='responseContainer'>

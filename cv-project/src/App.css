@@ -31,12 +31,13 @@ header {
 } */
 
 .cvProjectContainer {
+  margin: 1vw;
+  padding: 1vw;
   display: flex;
   justify-content: center;
-  padding: 1vw;
+  border: 2px solid red;
 }
 
-.generalInfoContainer,
 .educationInfoContainer,
 .experienceInfoContainer {
   display: block;
@@ -45,44 +46,61 @@ header {
   margin: 2vw;
   text-align: center;
 }
+.generalInfoContainer {
+  display: flex;
+  justify-content: center;
+}
 
-.genInfo,
-.educationInfo,
+.genInfo {
+  text-align: center;
+}
+
+#description {
+  width: 42.4vw;
+  height: 12vh;
+}
+
+.educationInfo {
+}
+
 .experienceInfo {
-  padding: 1vw;
-  margin: 1vw;
-  min-height: 50vh;
-  width: 20vw;
-  border: 2px solid black;
-  background-color: white;
+}
+
+.expInputsContainer div input {
+  margin-right: 3vw;
+  margin-left: 3vw;
+}
+
+.mTasksResponsibilitiesInput {
+  width: 42.4vw;
+  height: 12vh;
 }
 
 input {
   height: 3vh;
   margin: 1vh;
   width: 13vw;
+  border: 1px solid black;
 }
 
 button {
   margin: 1vw;
 }
 
-.educationInfoContainer {
-}
-
-.educationInfo {
-}
-
-.experienceInfoContainer {
-}
-
-.experienceInfo {
-}
-
 #yourCVTitle {
   display: flex;
   justify-content: center;
   font-size: xx-large;
+}
+
+.userInputsContainer {
+  display: block;
+  border: 2px solid rgb(0, 5, 7);
+  border-radius: 2px;
+  margin: 3vw;
+  min-height: 1250px;
+  width: 1000px;
+  background-color: white;
 }
 
 .genInfoResponse {
